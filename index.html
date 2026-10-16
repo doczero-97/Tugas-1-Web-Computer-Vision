@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision - Cara Komputer Melihat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test3.css"/>
+</head>
+
+
+<body>
+
+<header class="site-header">
+    <h1>Computer Vision</h1>
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="#pengenalan">Pengenalan</a></li>
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#cara-kerja">Cara kerja</a></li>
+            <li><a href="#penerapan">Penerapan</a></li>
+            <li><a href="#tantangan">Tantangan</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="konten">
+    <section id="pengenalan" class="bagian">
+        <h2>Pengenalan</h2>
+        <div class="isi">
+            <h3>Apa itu computer vision?</h3>
+            <p><strong>Computer Vision</strong> atau <em>visi komputer</em> adalah sub-bidang Artificial Intelligence yang membuat komputer mampu “melihat”, yaitu memahami isi gambar atau video digital. Secara teknis, bidang ini berusaha mengotomatiskan pekerjaan yang biasa dilakukan oleh penglihatan manusia.</p>
+            <p>Manusia mengenali wajah, rambu lalu lintas, atau tulisan hanya dengan sekali pandang. Komputer hanya menerima gambar sebagai kumpulan angka (nilai warna tiap piksel), sehingga ia harus belajar mengubah angka-angka itu menjadi pemahaman seperti “ini kucing” atau “ada pejalan kaki di depan kendaraan”.</p>
+            <p>Komputer tidak punya kemampuan itu sejak awal, sehingga harus <b>dilatih</b> memakai banyak contoh gambar. Setelah terlatih, komputer dapat mengenali objek yang belum pernah ia lihat sebelumnya.</p>
+
+            <figure>
+                <img src="Tomat.avif" alt="deskripsi gambar">
+                <figcaption>Deteksi objek menandai tomat matang beserta tingkat keyakinan modelnya</figcaption>
+            </figure>
+            <h3>Mata Robot di Kebun Tomat</h3>
+            <p>Gambar ini menunjukkan contoh deteksi objek (object detection) dalam bidang pertanian cerdas. Sebuah lengan robot bekerja di dalam rumah kaca, dan kameranya menganalisis gambar tanaman tomat secara langsung.</P>
+            <p> tomat yang ditemukan model diberi kotak pembatas (bounding box) berwarna kuning. Di atas kotak itu ada label “Ripe Tomato” (tomat matang) dan skor keyakinan (confidence score) dalam rentang 0 sampai 1. Misalnya, angka 0,984 berarti model 98,4 persen yakin objek itu adalah tomat matang. Pada gambar ini ada lima tomat matang yang terdeteksi, dengan skor antara 0,972 dan 0,984.</P>
+        </div>
+    </section>
+
+    <section id="sejarah" class="bagian">
+        <h2>Sejarah Singkat</h2>
+        <div class="isi">
+            <p>Perjalanan computer vision berlangsung lebih dari enam dekade. Awalnya para peneliti mengira masalah ini mudah, tetapi ternyata penglihatan adalah salah satu pekerjaan tersulit bagi komputer.</p>
+            <ol class="sejarah">
+                <li><strong>1966</strong> Seymour Papert di MIT meluncurkan <em>Summer Vision Project</em>. Waktu itu diyakini komputer bisa diajari mendeskripsikan apa yang dilihatnya dalam satu proyek musim panas. Ternyata masalahnya jauh lebih sulit.</li>
+                <li><strong>1970-an</strong> Lahir dasar algoritma seperti deteksi tepi dan <em>optical flow</em>. Kunihiko Fukushima memperkenalkan <em>Neocognitron</em>, cikal bakal jaringan konvolusi (<abbr title="Convolutional Neural Network">CNN</abbr>).</li>
+                <li><strong>1980-an</strong> Penelitian lebih matematis, misalnya model kontur (snake) dan analisis scale-space.</li>
+                <li><strong>1990-an</strong> Berkembang rekonstruksi 3D, kalibrasi kamera, segmentasi citra, dan pengenalan wajah statistik pertama (<em>Eigenface</em>).</li>
+                <li><strong>1998</strong> Yann LeCun dan rekan mengembangkan LeNet, <abbr title="Convolutional Neural Network">CNN</abbr> yang membaca angka tulisan tangan.</li>
+                <li><strong>2009</strong> Dataset ImageNet dirilis. Jutaan gambar berlabel menjadi bahan latihan dan tolok ukur.</li>
+                <li><strong>2012</strong> AlexNet memenangkan kompetisi ImageNet jauh di depan metode lama dan memicu ledakan <em>deep learning</em>.</li>
+                <li><strong>2015-2016</strong> Deteksi objek real-time seperti <acr title="You Only Look Once">YOLO</acr> menjadi praktis dipakai.</li>
+                <li><strong>2020</strong> Vision Transformer menunjukkan bahwa arsitektur di luar <abbr title="Convolutional Neural Network">CNN</abbr> juga mampu memahami gambar.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="cara-kerja" class="bagian">
+        <h2>Cara kerja</h2>
+        <div class="isi">
+            <h3>Alur umumnya :</h3>
+            <ol>
+                <li>Akuisisi citra: gambar atau video diambil dari kamera, ponsel, CCTV, atau pemindai medis.</li>
+                <li>Pra-pemrosesan: gambar dibersihkan, misalnya mengurangi derau, menyesuaikan ukuran, dan mengatur kontras.</li>
+                <li>Ekstraksi fitur: sistem menemukan ciri penting seperti tepi, sudut, tekstur, dan bentuk. Pada deep learning, tahap ini dipelajari model secara otomatis.</li>
+                <li>Pelatihan model: model (umumnya <abbr title="Convolutional Neural Network">CNN</abbr>) dilatih dengan banyak gambar berlabel.</li>
+                <li>Prediksi dan keputusan: model menghasilkan keluaran, misalnya label objek, kotak lokasi objek, atau tindakan lanjutan.</li>
+            </ol>
+            <h3>Tugas utama computer vision :</h3>
+            <p>Computer vision mencakup beberapa jenis tugas. Perbedaannya terletak pada pertanyaan yang ingin dijawab komputer tentang sebuah gambar.</p>
+        </div>
+        <br>
+        <div class="tabel">
+            <table border="1">
+            <caption>Jenis tugas computer vision dan contohnya</caption>
+            <tr>
+                <th>Tugas</th>
+                <th>Pertanyaan yang dijawab</th>
+                <th>Contoh penggunaan</th>
+            </tr>
+            <tr>
+                <td>Klasifikasi gambar</td>
+                <td>Ini gambar apa?</td>
+                <td>Memisahkan foto kucing dan anjing</td>
+            </tr>
+            <tr>
+                <td>Deteksi objek</td>
+                <td>Apa saja objeknya dan di mana?</td>
+                <td>Mendeteksi kendaraan pada CCTV</td>
+            </tr>
+            <tr>
+                <td>Segmentasi</td>
+                <td>Piksel mana milik objek apa?</td>
+                <td>Menandai area tumor pada citra medis</td>
+            </tr>
+            <tr>
+                <td>OCR</td>
+                <td>Apa tulisan di gambar ini?</td>
+                <td>Membaca plat nomor kendaraan</td>
+            </tr>
+            <tr>
+                <td>Pelacakan</td>
+                <td>Ke mana objek bergerak?</td>
+                <td>Menghitung orang yang melewati pintu</td>
+            </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="penerapan" class="bagian">
+        <h2>Penerapan</h2>
+        <div class="isi">
+            <p>Computer vision sudah hadir di banyak aplikasi sehari-hari, sering kali tanpa kita sadari. Beberapa bidang yang paling terasa manfaatnya:</p>
+            <h3>Kesehatan</h3>
+            <ul>
+                <li>Membantu dokter membaca foto rontgen dan CT scan.</li>
+                <li>Menandai area yang dicurigai sebagai tumor.</li>
+                <li>Mengukur ukuran organ dan aliran darah dari citra.</li>
+            </ul>
+            <h3>Transportasi</h3>
+            <ul>
+                <li>Mobil otonom mengenali jalur, rambu, dan pejalan kaki.</li>
+                <li>Tilang elektronik (ETLE) dan pengukuran kecepatan kendaraan dari video.</li>
+                <li>Sistem peringatan bila pengemudi mulai mengantuk.</li>
+            </ul>
+            <h3>Industri dan pertanian</h3>
+            <ul>
+                <li>Inspeksi cacat produk di jalur produksi secara otomatis.</li>
+                <li>Memandu robot untuk mengambil dan memilah barang.</li>
+                <li>Memantau tanaman dan mendeteksi penyakit pada daun.</li>
+            </ul>
+            <p>Di kehidupan sehari-hari, computer vision juga bekerja di balik pembukaan kunci ponsel dengan wajah, filter kamera, <em>augmented reality</em>, dan pencarian produk lewat foto.</p>
+        </div>
+    </section>
+
+    <section id="tantangan" class="bagian">
+        <h2>Tantangan dan etika</h2>
+        <div class="isi">
+            <p>Meski kemampuannya terus meningkat, computer vision masih menghadapi beberapa kendala:</p>
+            <ul>
+                <li><strong>Kondisi dunia nyata</strong>. Perubahan cahaya, sudut pandang, atau objek yang tertutup dapat membingungkan model.</li>
+                <li><strong>Kebutuhan data</strong>. Model perlu banyak gambar berlabel, dan pelabelannya memakan waktu serta biaya.</li>
+                <li><strong>Bias</strong>. Bila data latih kurang beragam, hasil model bisa tidak adil bagi kelompok tertentu.</li>
+                <li><strong>Privasi</strong>. Pengenalan wajah dan pengawasan massal menimbulkan kekhawatiran tentang pengumpulan data pribadi.</li>
+            </ul>
+            <P>Karena itu, penggunaan computer vision perlu disertai pengujian yang cermat, transparansi, dan pertimbangan etika.</P>
+        </div>
+    </section>
+
+    <section id="referensi" class="bagian">
+    </section>
+</main>
+
+<footer class="site-footer">
+</footer>
+
+</body>
+
+
+</html>

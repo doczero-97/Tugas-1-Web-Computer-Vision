@@ -1,0 +1,81 @@
+:root {
+    --kertas:   #F2FBF9;
+    --putih:    #ffffff;
+    --tinta:    #07040D;
+    --tinta-2:  #44486a;
+    --garis:    #d5d8e4;
+    --kotak:    #3244B2;
+    --kotak-gelap: #18215d;
+    --teal:     #0f8b8d;
+    --indigo:   #2d3a8c;
+    --lebar-isi: 1080px;
+    --font-judul: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+    --font-isi:   "Public Sans", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-isi);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--tinta);
+    background-color: var(--kertas);
+}
+
+h2, h3  {
+    font-family: var(--font-judul);
+    line-height: 1.15;
+    margin: 10px;
+}
+
+.site-header    {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 0;
+    padding: 12px 32px;
+    color: var(--kertas);
+    border-bottom: 4px solid var(--teal);
+    background-color: var(--kotak-gelap);
+}
+
+.menu   {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+summary{
+    display: block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: var(--kertas);
+    text-decoration: none;
+}
+
+.menu a {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: var(--kertas);
+    text-decoration: none;
+}
+
+summary:hover,
+summary:focus-visible {
+    background-color: var(--kotak);
+    color: var(--kertas);
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    background-color: var(--kotak);
+    color: var(--kertas);
+}
