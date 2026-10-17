@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="test3.css"/>
 </head>
 
-
 <body>
 
-<header class="site-header">
+<header class="header">
     <h1>Computer Vision</h1>
     <nav class="navbar">
         <ul class="menu">
@@ -27,19 +26,28 @@
     </nav>
 </header>
 
+    <section class="intro">
+        <div>
+        <h2>Apa itu <br> <a>computer vision?</a></h2>
+        <br>
+        <p><strong><em>Computer Vision</strong></em> adalah sub-bidang <em>Artificial Intelligence</em> yang membuat komputer mampu “melihat”, yaitu memahami isi gambar dan video. Bagi komputer, sebuah foto tidak lebih dari deretan angka. Tugasnya adalah mengubah angka itu menjadi arti.</p>
+        </div>
+        <img src="intro.png" alt="contoh deteksi objek multilevel oleh computer vision">
+    </section>
+
 <main class="konten">
     <section id="pengenalan" class="bagian">
         <h2>Pengenalan</h2>
         <div class="isi">
-            <h3>Apa itu computer vision?</h3>
-            <p><strong>Computer Vision</strong> atau <em>visi komputer</em> adalah sub-bidang Artificial Intelligence yang membuat komputer mampu “melihat”, yaitu memahami isi gambar atau video digital. Secara teknis, bidang ini berusaha mengotomatiskan pekerjaan yang biasa dilakukan oleh penglihatan manusia.</p>
-            <p>Manusia mengenali wajah, rambu lalu lintas, atau tulisan hanya dengan sekali pandang. Komputer hanya menerima gambar sebagai kumpulan angka (nilai warna tiap piksel), sehingga ia harus belajar mengubah angka-angka itu menjadi pemahaman seperti “ini kucing” atau “ada pejalan kaki di depan kendaraan”.</p>
-            <p>Komputer tidak punya kemampuan itu sejak awal, sehingga harus <b>dilatih</b> memakai banyak contoh gambar. Setelah terlatih, komputer dapat mengenali objek yang belum pernah ia lihat sebelumnya.</p>
+            <h3>Pengenalan tentang computer vision</h3>
+            <p><em>Computer Vision</em> atau <strong>visi komputer</strong> adalah bidang ilmu yang membuat komputer memperoleh pemahaman dari gambar dan video digital. Secara teknis, bidang ini berusaha mengotomatiskan pekerjaan yang biasa dilakukan oleh penglihatan manusia.</p>
+            <p>Manusia mengenali wajah, rambu lalu lintas, atau tulisan hanya dengan sekali pandang. Komputer tidak punya kemampuan itu sejak awal, sehingga harus dilatih memakai banyak contoh gambar. Setelah terlatih, komputer dapat mengenali objek yang belum pernah ia lihat sebelumnya.</p>
 
             <figure>
-                <img src="Tomat.avif" alt="deskripsi gambar">
+                <img src="Tomat.avif" alt="Deteksi objek menandai tomat matang beserta tingkat keyakinan modelnya">
                 <figcaption>Deteksi objek menandai tomat matang beserta tingkat keyakinan modelnya</figcaption>
             </figure>
+
             <h3>Mata Robot di Kebun Tomat</h3>
             <p>Gambar ini menunjukkan contoh deteksi objek (object detection) dalam bidang pertanian cerdas. Sebuah lengan robot bekerja di dalam rumah kaca, dan kameranya menganalisis gambar tanaman tomat secara langsung.</P>
             <p> tomat yang ditemukan model diberi kotak pembatas (bounding box) berwarna kuning. Di atas kotak itu ada label “Ripe Tomato” (tomat matang) dan skor keyakinan (confidence score) dalam rentang 0 sampai 1. Misalnya, angka 0,984 berarti model 98,4 persen yakin objek itu adalah tomat matang. Pada gambar ini ada lima tomat matang yang terdeteksi, dengan skor antara 0,972 dan 0,984.</P>
@@ -67,7 +75,7 @@
     <section id="cara-kerja" class="bagian">
         <h2>Cara kerja</h2>
         <div class="isi">
-            <h3>Alur umumnya :</h3>
+            <h3>Alur umumnya:</h3>
             <ol>
                 <li>Akuisisi citra: gambar atau video diambil dari kamera, ponsel, CCTV, atau pemindai medis.</li>
                 <li>Pra-pemrosesan: gambar dibersihkan, misalnya mengurangi derau, menyesuaikan ukuran, dan mengatur kontras.</li>
@@ -75,7 +83,13 @@
                 <li>Pelatihan model: model (umumnya <abbr title="Convolutional Neural Network">CNN</abbr>) dilatih dengan banyak gambar berlabel.</li>
                 <li>Prediksi dan keputusan: model menghasilkan keluaran, misalnya label objek, kotak lokasi objek, atau tindakan lanjutan.</li>
             </ol>
-            <h3>Tugas utama computer vision :</h3>
+
+            <figure>
+                <img src="diagram.jpg" alt="Diagram alur sederhana computer vision">
+                <figcaption>Diagram alur sederhana computer vision</figcaption>
+            </figure>
+
+            <h3>Tugas utama computer vision:</h3>
             <p>Computer vision mencakup beberapa jenis tugas. Perbedaannya terletak pada pertanyaan yang ingin dijawab komputer tentang sebuah gambar.</p>
         </div>
         <br>
@@ -157,13 +171,32 @@
     </section>
 
     <section id="referensi" class="bagian">
+        <h2>Referensi</h2>
+        <div class="isi">
+            <p>Berikut ini adalah sumber dan referensi:</p>
+            <ul>
+                <li><a href="https://id.wikipedia.org/wiki/Visi_komputer">id.wikipedia.org, visi komputer</a></li>
+                <li><a href="https://opencv.org/">opencv.org, pustaka computer vision sumber terbuka</a></li>
+                <li><a href="https://www.image-net.org/index.php">image-net.org, dataset acuan penelitian computer vision</a></li>
+                <li><a href="https://www.image-net.org/index.php">rifqimulyawan.com, kamus AI computer vision</a></li>
+                <li><a href=https://www.intel.co.id/content/www/id/id/learn/what-is-computer-vision.html>intel.co.id, apa itu computer vision?</a></li>
+                <li><a href="https://commtelnetworks.com/harnessing-sight-understanding-computer-vision-in-cni-industries/">commtelnetworks.com, memahami visi komputer di industri CNI</a></li>
+            </ul>
+        </div>
     </section>
 </main>
 
-<footer class="site-footer">
+<footer class="footer">
+    <p><strong>Kelompok ?</strong></p>
+            <ul class="anggota">
+                <li>|=====|</li>
+                <li>|Harisuddin Hawali - 262102003|</li>
+                <li>|=====|</li>
+            </ul>
+    <p>Pengantar Pemrograman Web | Informatika | 2026</p>
+    <p><strong>Universitas Jenderal Achmad Yani Yogyakarta</strong></p>
 </footer>
 
 </body>
-
 
 </html>
