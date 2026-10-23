@@ -1,0 +1,85 @@
+https://id.wikipedia.org/wiki/Visi_komputer
+https://opencv.org/
+https://www.image-net.org/index.php
+https://rifqimulyawan.com/kamus/computer-vision/
+https://www.intel.co.id/content/www/id/id/learn/what-is-computer-vision.html
+https://commtelnetworks.com/harnessing-sight-understanding-computer-vision-in-cni-industries/
+
+60=40
+40=36
+36=26
+26=20
+20=18
+18=16
+
+
+header=main=footer
+section
+h2=div
+
+
+/* media queries */
+@media (max-width: 768px){
+    /* overall */
+    body{font-size: 16px;}
+
+    figcaption{font-size: 12px;}
+    
+    /* header */
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    h1{font-size: 26px;}
+
+    .navbar{width: 100%;}
+
+    ul.menu{flex-direction: column; gap: 4px;}
+
+    .menu a{padding: 10px 12px;} 
+
+    /* intro */
+    section.intro{
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 24px 12px 0;
+    }
+
+    .intro h2{font-size: 40px;}
+
+    .intro p{font-size: 18px; margin: 0 0 18px;}
+
+    /* isi */
+    main.konten{padding: 24px 12px 0;}
+
+    section.bagian{
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 24px 0;
+    }
+
+    h2{font-size: 36px;}
+
+    h3{font-size: 20px; margin: 0 0 12px;}
+
+    p{margin: 0 0 12px}
+
+    ul, ol{margin: 0 0 12px}
+
+    .sejarah strong{font-size: 18px; margin: 12px 0 0;}
+
+    th, td{font-size: 16px; padding: 6px 7px;}
+
+    th{font-size: 18px}
+
+    caption{font-size: 12px; padding: 0 0 3px;}
+
+    /* footer */
+    .footer{font-size:12px; padding: 16px;}
+
+    ul.anggota{flex-direction: column; gap: 4px;}
+
+}

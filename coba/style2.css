@@ -1,0 +1,227 @@
+:root   {
+    --tinta-1: #0F172A;
+    --tinta-2: #E2E8F0;
+    --background-gelap: #18215d66;
+    --background-terang: #f8fafc66;
+    --alpha: 0.3;
+    --kontras: rgb(56, 189, 248);
+    --lebar-isi: 1080px;
+    --font-judul: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+    --font-isi:   "Public Sans", "Segoe UI", Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(wallpaper.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: var(--font-isi);
+    font-size: 18px;
+    color: var(--tinta-1);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: var(--font-judul);
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    margin: 0 0 18px;
+    font-size: 26px;
+}
+
+p {
+    margin: 0 0 18px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+ul, ol {
+    margin: 0 0 18px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+/* header */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin: 32px 24px;
+    padding: 24px 32px;
+    font-family: var(--font-judul);
+    color: #F1F5F9;
+    background-color: rgba(8, 20, 48, 0.55);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    border-left: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 8px 14px;
+    color: var(--tinta-2);
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    background-color: rgba(56, 189, 248, 0.4);
+    color: var(--tinta-1);
+}
+
+/* intro */
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 48px 48px;
+    gap: 48px;
+    align-items: center;
+    max-width: var(--lebar-isi);
+    margin: auto;
+    background-color: var(--background-terang);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    border-left: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
+}
+
+.intro h2 {
+    font-size: 50px;
+}
+
+.intro p {
+    font-size: 20px;
+}
+
+.intro span {
+    color: var(--kontras);
+}
+
+figure img{
+    border-radius: 50px;
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    border-left: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4)
+}
+
+.intro img {
+    border-radius: 100px;
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    border-left: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4)
+}
+
+/* isi */
+.konten {
+    max-width: var(--lebar-isi);
+    margin: auto;
+    padding: 48px 0 0;
+}
+
+.bagian {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 0 48px;
+    padding: 48px;
+    margin: 0 0 48px;
+    background-color: var(--background-terang);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    border-left: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2)
+}
+
+.sejarah {
+    padding: 0 20px;
+    list-style: none;
+    border-left: 3px solid var(--tinta-1);
+}
+
+.sejarah strong {
+    display: block;
+    margin: 20px 0 0 0;
+    font-family: var(--font-judul);
+    font-size: 20px;
+}
+
+.tabel {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    padding-bottom: 6px;
+    font-size: 16px;
+    font-style: italic;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 14px;
+    text-align: center;
+    border: 2px solid var(--tinta-1);
+}
+
+th {
+    font-size: 20px;
+    color: var(--tinta-2);
+    background-color: var(--background-gelap);
+}
+
+#referensi a {
+    font-style: italic;
+    color: var(--tinta-1);
+    text-decoration: none;
+}
+
+#referensi a:hover,
+#referensi a:focus-visible {
+    color: var(--kontras);
+}

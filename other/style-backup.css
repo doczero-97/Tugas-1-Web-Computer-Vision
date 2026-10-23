@@ -1,7 +1,7 @@
 /* root-penyimpanan variabel */
 :root   {
-    --tinta-1:  #0F172A;
-    --tinta-2:    #E2E8F0;
+    --tinta-1: #0F172A;
+    --tinta-2:#E2E8F0;
     --background-gelap: #18215d;
     --background-terang: #F8FAFC;
     --kontras:     #38BDF8;
@@ -11,7 +11,7 @@
 }
 
 /* overall */
-html{scroll-behavior: smooth;}
+html{scroll-behavior: smooth; box-sizing: border-box;}
 
 body{
     margin: 0;
@@ -24,7 +24,6 @@ body{
 h1, h2, h3{margin: 0; font-family: var(--font-judul);}
 
 img{
-    margin: 0;
     width: 100%;
     height: auto;
     display: block;
@@ -64,7 +63,7 @@ ul.menu{
 
 .menu a:hover,
 .menu a:focus-visible{
-    background-color: var(--kontras); color:var(--tinta-1)}
+    background-color: var(--kontras); color:var(--tinta-1);}
 
 /* intro */
 section.intro{
@@ -77,7 +76,7 @@ section.intro{
     margin: auto;
 }
 
-.intro h2{font-size: 60px; font-weight: bold;}
+.intro h2{font-size: 60px; font-weight: 800;}
 
 .intro a{color: var(--kontras);}
 
@@ -87,7 +86,7 @@ section.intro{
 
 /* isi */
 main.konten{
-    padding: 32px 24px;
+    padding: 48px 24px 0;
     max-width: var(--lebar-isi);
     margin: auto;
 }
@@ -100,7 +99,7 @@ section.bagian{
     border-top: 6px solid var(--tinta-1);
 }
 
-h2{font-size: 40px; text-transform: capitalize;}
+h2{font-size: 40px;}
 
 h3{font-size: 26px; margin: 0 0 18px;}
 
@@ -142,7 +141,6 @@ table{
 th, td{
     padding: 12px 14px;
     border: 2px solid var(--tinta-1);
-    align-items: center;
     text-align: center;
 }
 
@@ -168,11 +166,9 @@ caption{
 #referensi a:hover,
 #referensi a:focus-visible{color: var(--kontras);}
 
-
 /* footer */
 .footer{
     padding: 24px 32px;
-    align-items: center;
     color: var(--tinta-2);
     background-color: var(--background-gelap);
     border-top: 6px solid var(--kontras);
@@ -191,3 +187,70 @@ ul.anggota {
 }
 
 footer strong{text-transform: uppercase;}
+
+
+/* media queries */
+@media (max-width: 768px){
+    /* overall */
+    body{font-size: 16px;}
+
+    figcaption{font-size: 12px;}
+    
+    /* header */
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    h1{font-size: 26px;}
+
+    .navbar{width: 100%;}
+
+    ul.menu{flex-direction: column; gap: 4px;}
+
+    .menu a{padding: 10px 12px;} 
+
+    /* intro */
+    section.intro{
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 24px 12px 0;
+    }
+
+    .intro h2{font-size: 40px;}
+
+    .intro p{font-size: 18px; margin: 0 0 18px;}
+
+    /* isi */
+    main.konten{padding: 24px 12px 0;}
+
+    section.bagian{
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 24px 0;
+    }
+
+    h2{font-size: 36px;}
+
+    h3{font-size: 20px; margin: 0 0 12px;}
+
+    p{margin: 0 0 12px;}
+
+    ul, ol{margin: 0 0 12px;}
+
+    .sejarah strong{font-size: 18px; margin: 12px 0 0;}
+
+    br.responsive{display: none;}
+
+    th, td{font-size: 16px; padding: 6px 7px;}
+
+    th{font-size: 18px;}
+
+    caption{font-size: 12px; padding: 0 0 3px;}
+
+    /* footer */
+    .footer{font-size:12px; padding: 16px;}
+
+    .anggota{flex-direction: column; gap: 4px;}
+}
